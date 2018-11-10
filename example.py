@@ -8,6 +8,8 @@ import datetime
 
 from pushy_utils import send_message, get_templated_insult, make_message
 
+import toml
+
 
 
 def is_lucky(x=6):
@@ -24,7 +26,7 @@ if __name__ == '__main__':
         try:
             msg = get_templated_insult()
             payload = make_message(msg, 'somephonenumber') # sure thats a valid number
-            send_message(msg)
+            send_message(payload)
         except:
             print("failed miserably")
         
